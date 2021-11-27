@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue2/Vue3 响应式原理</title>
+</head>
+<body>
+<h1>Vue2/Vue3 响应式原理</h1>
+<h3>模拟Vue2中的响应式 <br>
+    通过Object.defineProperty() 给每个属性设置 get 和 set
+</h3>
+<h3>模拟Vue3中的响应式 <br>
+    通过 ES6 的 Proxy() 给数据添加”代理“：拦截对象中任意属性的变换。<br>
+    通过 ES6 的 Reflect()（反射）；对源对象的属性进行操作。
+</h3>
+
+<script type="text/javascript">
+    // 源数据
+    let person = {
+        name: "张三",
+        age: 18
+    }
+
+    // 模拟Vue2中的响应式
+    // 通过Object.defineProperty() 给每个属性设置 get 和 set
+    // let p = {}
+    // Object.defineProperty(p, "name", {
+    //     configurable: true, // 设置为 true，允许修改
+    //     // 读取 name 时调用
+    //     get() {
+    //         return person.name
+    //     },
+    //     // 修改 name 时调用
+    //     set(newValue) {
+    //         console.log("修改了 name 属性，更新页面")
+    //         person.name = newValue
+    //     }
+    // })
+    // Object.defineProperty(p, "age", {
+    //     configurable: true, // 设置为 true，允许修改
+    //     // 读取 age 时调用
+    //     get() {
+    //         return person.age
+    //     },
+    //     // 修改 age 时调用
+    //     set(newValue) {
+    //         console.log("修改了 age 属性，更新页面")
+    //         person.age = newValue
+    //     }
+    // })
+
+
+    // 模拟Vue3的响应式
+    // 通过 ES6 的 Proxy() 给数据添加”代理“：拦截对象中任意属性的变换。
+    // 通过 ES6 的 Reflect()（反射）；对源对象的属性进行操作。
+    const p = new Proxy(person, {
+        // proxy 的 get 接收两个参数 （读取某个属性时调用）
+        // target：代理时传入的数据（这里就是 person）
+        // proName：被读取的那个属性
+        get(target, propName) {
+            console.log(`读取了 p 身上的${propName}属性`, target, propName)
+            return Reflect.get(target, propName)
+        },
+        // proxy 的 set 接收三个参数 （修改、添加某个属性时调用）
+        // target：代理时传入的数据（这里就是 person）
+        // proName：被修改的那个属性
+        // value：修改后的值
+        set(target, propName, value) {
+            console.log(`修改了 p 身上的${propName}属性`)
+            console.log(target, propName, value)
+            Reflect.set(target, propName, value)
+        },
+        defineProperty(target, propName) {
+            console.log(`删除了 p 身上的${propName}属性`)
+            // delete 会返回一个布尔值
+            return Reflect.deleteProperty(target, propName)
+        }
+    })
+
+    // Reflect.defineProperty() 与 objecet.defineProperty() 的区别
+    // object 失败了会直接终止操作，只有使用 try catch 抛出错误。
+    // Reflect 失败会返回 undefined，不会中断操作。
+</script>
+</body>
+</html>
