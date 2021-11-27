@@ -8,12 +8,15 @@
       <el-button type="success" round @click="goHome">回到首页</el-button>
     </el-header>
     <el-container>
-      <el-aside width="64px">
+      <el-aside :width="isCollapse ? '64px' : '200px'">
+        <div class="collapse-button" @click="toggleCollapse">|||</div>
         <el-menu
             class="el-menu-vertical-demo"
             @open="handleOpen"
             @close="handleClose"
             router
+            :collapse="isCollapse"
+            :collapse-transition="false"
             collapse="true"
         >
           <el-sub-menu index="1">
@@ -24,7 +27,7 @@
               <span>Vue3学习demo</span>
             </template>
             <el-menu-item index="/home/demo1">ref()、reactive()</el-menu-item>
-            <el-menu-item index="/home/demo2">computed()、watch()</el-menu-item>
+            <el-menu-item index="/home/demo2">ref()拓展、computed()、watch()</el-menu-item>
             <el-menu-item index="/home/demo3">demo three</el-menu-item>
           </el-sub-menu>
           <el-menu-item index="/home/blog">
@@ -62,7 +65,7 @@ export default defineComponent({
         const route = useRoute()  // 相对于Vue2 =  this.$route()
         const router = useRouter()  // 相当于Vue2 = this.$router()
 
-        // const isCollapse = ref(true)
+        const isCollapse = ref(true)
         const handleOpen = (key, keyPath) => {
           console.log(key, keyPath)
         }
@@ -72,10 +75,16 @@ export default defineComponent({
         const goHome = () => {
           router.push('/home')
         }
+        // 控制侧边栏折叠
+        function toggleCollapse() {
+          this.isCollapse = !this.isCollapse
+        }
         return {
+          isCollapse,
           handleOpen,
           handleClose,
-          goHome
+          goHome,
+          toggleCollapse
         }
       }
     }
@@ -107,5 +116,14 @@ export default defineComponent({
 
 .el-button {
   height: 32px;
+}
+
+.collapse-button {
+  background-color: #E353E3;
+  font-size: 10px;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
 }
 </style>

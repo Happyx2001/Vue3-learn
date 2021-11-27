@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-1">
+  <div class="demo">
     <h2>setup 、ref、reactive</h2>
     <div class="learn">
       <h3 class="title">1. setup</h3>
@@ -123,7 +123,7 @@ export default {
 
 </script>
 <style scoped>
-.demo-1 {
+.demo {
   height: 100%;
   background-color: white;
   padding: 20px;
