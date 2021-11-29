@@ -12,7 +12,7 @@
 import {reactive} from "vue";
 
 export default {
-  name: "PropData",
+  name: "SetupProps",
   // props: 接收父组件传递过来的值, 会被包裹成 Proxy 对象
   props: ["job"],
   // emits:[] Vue3中发射自定义事件, 必须先用 emits: [事件名, 事件名, ...] 包裹事件 (2)
@@ -23,8 +23,8 @@ export default {
   setup(props, context) {
     console.log("===setup()===", props, "props")  // 打印 job
     console.log(context.attrs, "context.attrs")  // 打印 school 因为它未被声明接收
-    console.log(context.emit, "contest.emit")   // 触发的自定义事件的
-    console.log(context.slots, "context.slots")  // 插槽
+    console.log(context.emit, "contest.emit")   // 触发的自定义事件
+    console.log(context.slots, "context.slots")  // 传递的插槽
     /**
      * setup() 的注意点:
      * 1. setup() 执行的时间：

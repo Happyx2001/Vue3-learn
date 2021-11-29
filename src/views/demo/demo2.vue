@@ -2,24 +2,32 @@
   <div class="demo">
     <h1>setup拓展，computed()，watch()</h1>
     <el-divider content-position="center">setup拓展, 父子组件相关</el-divider>
-    <props-data @hello="showHello" job="前端工程师" school="广东海洋大学">
+    <setup-props @hello="showHello" job="前端工程师" school="广东海洋大学">
       <template v-slot:testslot1>
         <span>测试插槽1</span>
       </template>
       <template v-slot:testslot2>
         <span>测试插槽2</span>
       </template>
-    </props-data>
-    <el-divider content-position="center">computed() and watch()</el-divider>
+    </setup-props>
+    <el-divider content-position="center">computed()</el-divider>
+    <vue-computed></vue-computed>
+    <el-divider content-position="center">watch()</el-divider>
+    <vue-watch></vue-watch>
+    <el-divider content-position="center">watchEffect()</el-divider>
+    <vue-watch-effect></vue-watch-effect>
   </div>
 </template>
 
 <script>
-import PropsData from "../../components/PropsData.vue";
-// import {defineComponent} from "vue";
+import SetupProps from "../../components/demo2/SetupProps.vue";
+import VueComputed from "../../components/demo2/VueComputed.vue";
+import VueWatch from "../../components/demo2/VueWatch.vue";
+import VueWatchEffect from "../../components/demo2/VueWatchEffect.vue";
+
 export default {
   name: "demo2",
-  components: {PropsData},
+  components: {SetupProps, VueComputed, VueWatch, VueWatchEffect},
   setup() {
     /**
      * setup() 的注意点:
@@ -35,6 +43,8 @@ export default {
      *
      * 实际操作 见: PropsData 组件
      */
+
+    // 触发自定义事件（自定义事件由setup-props组件发出）
     function showHello(value) {
       alert(`Hello Vue3,我是${value}`)
     }
