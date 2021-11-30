@@ -36,9 +36,9 @@ const routes = [
                 component: () => import("../views/demo/demo3.vue")
             },
             {
-                path: '/home/demo4',
-                name: "Demo4",
-                component: () => import("../views/demo/demo4.vue")
+                path: '/home/hooks',
+                name: "Hooks",
+                component: () => import("../views/demo/Hooks.vue")
             },
             {
                 path: '/home/blog',

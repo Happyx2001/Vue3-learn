@@ -28,7 +28,9 @@
             </template>
             <el-menu-item index="/home/demo1">ref()、reactive()</el-menu-item>
             <el-menu-item index="/home/demo2">ref()拓展、computed()、watch()</el-menu-item>
-            <el-menu-item index="/home/demo3">demo three</el-menu-item>
+            <el-menu-item index="/home/demo3">Vue3生命周期</el-menu-item>
+            <el-menu-item index="/home/hooks">Hooks</el-menu-item>
+
           </el-sub-menu>
           <el-menu-item index="/home/blog">
             <el-icon>

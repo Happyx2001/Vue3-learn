@@ -46,14 +46,14 @@ export default {
       },
       // 修改
       set(value) {
-        // 根据计算属性读取的值，修改被计算的属性
+        // 这里的操作是：根据计算属性读取的值，修改被计算的属性
         const newName = value.split('-')
         person.first = newName[0]
         person.second = newName[1]
       }
     })
 
-    // 3. 导出计算属性
+    // 3. 导出计算属性（如果是函数写法就需要单独导出，如果是对象方法写法则导出对象即可）
     return {
       person,
     }

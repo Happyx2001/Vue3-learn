@@ -13,13 +13,13 @@
     <div>
       <h3>watchEffect和computed有些相似: </h3><br>
       computed: 注重的是计算出来的值（即：回调函数的返回值），必须写返回值 <br>
-      watchEffect: 注重的是过程（即：回调函数本生），不用写返回值
+      watchEffect: 注重的是过程（即：回调函数本身），不用写返回值
     </div>
   </div>
 </template>
 
 <script>
-import {ref, reactive, watchEffect, watch} from "vue";
+import {ref, watchEffect} from "vue";
 
 export default {
   name: "VueWatchEffect",
