@@ -2,9 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 html,
 body {
     height: 100%;
+}
+
+.mr-t-20 {
+    margin-top: 20px;
 }

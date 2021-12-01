@@ -1,4 +1,4 @@
-// 实现一个 Hooks 函数: 鼠标"打点"相关数据
+// 实现一个 Hooks 函数: 记录鼠标点击时的x、y坐标
 // 1. 引入所需的 vue 模块
 import {reactive, onMounted, onBeforeUnmount} from 'vue'
 

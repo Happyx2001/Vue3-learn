@@ -30,6 +30,7 @@
             <el-menu-item index="/home/demo2">ref()拓展、computed()、watch()</el-menu-item>
             <el-menu-item index="/home/demo3">Vue3生命周期</el-menu-item>
             <el-menu-item index="/home/hooks">Hooks</el-menu-item>
+            <el-menu-item index="/home/demo4">toRef() ...</el-menu-item>
 
           </el-sub-menu>
           <el-menu-item index="/home/blog">
@@ -77,10 +78,12 @@ export default defineComponent({
         const goHome = () => {
           router.push('/home')
         }
+
         // 控制侧边栏折叠
         function toggleCollapse() {
           this.isCollapse = !this.isCollapse
         }
+
         return {
           isCollapse,
           handleOpen,

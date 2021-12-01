@@ -7,8 +7,8 @@
       <br>自定义hooks的优势：复用代码，让 setup 中的逻辑更加清晰易懂
     </div>
     <el-divider content-position="center">Hooks的使用</el-divider>
-    <h3>一个hooks组件</h3>
-    <div>当前鼠标点击时的坐标为: x: {{ point.x }}, y: {{ point.y }}</div>
+    <h3>一个hooks组件: 打印鼠标点击时的坐标</h3>
+    <div>当前鼠标点击时的坐标为: <span class="point">x: {{ point.x }}, y: {{ point.y }}</span></div>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ import usePoint from "../../hooks/usePoint";
 export default {
   name: "demo4",
   setup() {
-    // 数据
+    // 组件本身的属性
     let num = ref(0)
 
     // 2. 运用 hooks 函数
@@ -28,6 +28,7 @@ export default {
 
     return {
       num,
+      // 3. 导出 Hooks 函数
       point
     }
   }
@@ -41,6 +42,10 @@ export default {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 5px 3px #66a8cc;
+}
+
+.point {
+  font-size: 64px;
 }
 
 </style>

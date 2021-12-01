@@ -16,35 +16,40 @@ const routes = [
         },
         children: [
             {
-                path:'/home/welcome',
+                path: '/home/welcome',
                 name: "Welcome",
                 component: () => import("../views/Welcome.vue")
             },
             {
                 path: '/home/demo1',
                 name: "Demo1",
-                component: () => import("../views/demo/demo1.vue")
+                component: () => import("../views/study/study01.vue")
             },
             {
                 path: '/home/demo2',
                 name: "Demo2",
-                component: () => import("../views/demo/demo2.vue")
+                component: () => import("../views/study/study02.vue")
             },
             {
                 path: '/home/demo3',
                 name: "Demo3",
-                component: () => import("../views/demo/demo3.vue")
+                component: () => import("../views/study/study03.vue")
             },
             {
                 path: '/home/hooks',
                 name: "Hooks",
-                component: () => import("../views/demo/Hooks.vue")
+                component: () => import("../views/study/Hooks.vue")
+            },
+            {
+                path: '/home/demo4',
+                name: "Demo4",
+                component: () => import('../views/study/study04.vue')
             },
             {
                 path: '/home/blog',
                 name: "Blog",
                 component: () => import('../views/blog/blog.vue')
-            }
+            },
         ]
     }
 ]
