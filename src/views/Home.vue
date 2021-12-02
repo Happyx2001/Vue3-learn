@@ -30,8 +30,8 @@
             <el-menu-item index="/home/demo2">ref()拓展、computed()、watch()</el-menu-item>
             <el-menu-item index="/home/demo3">Vue3生命周期</el-menu-item>
             <el-menu-item index="/home/hooks">Hooks</el-menu-item>
-            <el-menu-item index="/home/demo4">toRef() ...</el-menu-item>
-
+            <el-menu-item index="/home/demo4">其他CompositionApi (1)</el-menu-item>
+            <el-menu-item index="/home/demo5">其他CompositionApi (2)</el-menu-item>
           </el-sub-menu>
           <el-menu-item index="/home/blog">
             <el-icon>

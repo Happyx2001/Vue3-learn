@@ -59,7 +59,7 @@ export default {
       name,
       age,
       salary,
-      // 导出被 toRefs 修饰的属性
+      // 导出被 toRefs 修饰的属性们
       ...toRefs(newPer)
     }
   }

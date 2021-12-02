@@ -4,6 +4,8 @@
     <vue-to-ref></vue-to-ref>
     <el-divider content-position="center">shallowReactive()、shallowRef()</el-divider>
     <vue-shallow-ref></vue-shallow-ref>
+    <el-divider content-position="center">readonly()、shallowReadonly()</el-divider>
+    <vue-readonly></vue-readonly>
   </div>
 </template>
 
@@ -12,9 +14,11 @@
 import {reactive, toRef, toRefs} from "vue";
 import VueToRef from "../../components/demo4/VueToRef.vue";
 import VueShallowRef from "../../components/demo4/VueShallowRef.vue";
+import VueReadonly from "../../components/demo4/VueReadonly.vue";
+
 export default {
   name: "study04",
-  components: {VueToRef, VueShallowRef}
+  components: {VueToRef, VueShallowRef, VueReadonly}
 }
 </script>
 
