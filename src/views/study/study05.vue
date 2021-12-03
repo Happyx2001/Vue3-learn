@@ -1,13 +1,17 @@
 <template>
-    <div class="demo">
+  <div class="demo">
+    <el-divider content-position="center">toRaw()、markRaw()</el-divider>
+    <vue-to-raw></vue-to-raw>
 
-
-    </div>
+  </div>
 </template>
 
 <script>
+import VueToRaw from "../../components/demo5/VueToRaw.vue";
+
 export default {
-  name: "study05"
+  name: "study05",
+  components: {VueToRaw}
 }
 </script>
 
