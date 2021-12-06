@@ -1,7 +1,7 @@
 <template>
   <h1>readonly()、shallowReadonly()</h1>
   <div>readonly: 让一个响应式数据变为只读的（深只读）。
-    <br>shallowReadonlu: 让一个响应式数据变为只读的（浅只读，深层数据依旧时响应式的）。
+    <br>shallowReadonly: 让一个响应式数据变为只读的（浅只读，深层数据依旧时响应式的）。
     <br>强制改变只读属性，会报错。
     <br>应用场景: 不希望数据被修改时。
   </div>
@@ -51,8 +51,8 @@ export default {
     })
 
     // 给两个对象 只读属性
-    ZhangSan = readonly(ZhangSan)
-    LiSi = shallowReadonly(LiSi)
+    ZhangSan = readonly(ZhangSan)   // 深只读
+    LiSi = shallowReadonly(LiSi)   // 浅只读
 
     return {
       ZhangSan,

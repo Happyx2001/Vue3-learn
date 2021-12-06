@@ -11,8 +11,6 @@
         <el-button @click="addAge">加年龄</el-button>
       </div>
     </div>
-
-
     <div class="content mr-t-20">markRaw(): <br>
       作用：标记一个对象，使其永远不会变成响应式对象。<br>
       使用场景：<br>
@@ -58,7 +56,7 @@ export default {
 
     function addCarPrice() {
       ZhangSan.car.price++   // car被markRaw修饰了，car没有响应式
-      console.log(ZhangSan.car)
+      console.log(ZhangSan.car, "被markRaw修饰了，没有响应式")
     }
 
     return {

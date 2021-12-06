@@ -70,16 +70,17 @@
             console.log(target, propName, value)
             Reflect.set(target, propName, value)
         },
-        defineProperty(target, propName) {
+        // 删除属性
+        deleteProperty(target, propName) {
             console.log(`删除了 p 身上的${propName}属性`)
             // delete 会返回一个布尔值
             return Reflect.deleteProperty(target, propName)
         }
     })
 
-    // Reflect.defineProperty() 与 objecet.defineProperty() 的区别
-    // object 失败了会直接终止操作，只有使用 try catch 抛出错误。
-    // Reflect 失败会返回 undefined，不会中断操作。
+    // Reflect.defineProperty() 与 object.defineProperty() 的区别
+    // object.def... 失败会直接终止操作 报错，只有使用 try catch 抛出错误。
+    // Reflect.def... 失败会返回 undefined，不会中断操作。
 </script>
 </body>
 </html>

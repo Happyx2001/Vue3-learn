@@ -2,16 +2,18 @@
   <div class="demo">
     <el-divider content-position="center">toRaw()、markRaw()</el-divider>
     <vue-to-raw></vue-to-raw>
-
+    <el-divider content-position="center">customRef()</el-divider>
+    <vue-custom-ref></vue-custom-ref>
   </div>
 </template>
 
 <script>
 import VueToRaw from "../../components/demo5/VueToRaw.vue";
+import VueCustomRef from "../../components/demo5/VueCustomRef.vue";
 
 export default {
   name: "study05",
-  components: {VueToRaw}
+  components: {VueToRaw, VueCustomRef}
 }
 </script>
 

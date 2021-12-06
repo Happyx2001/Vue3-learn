@@ -8,7 +8,7 @@
       <el-button type="success" round @click="goHome">回到首页</el-button>
     </el-header>
     <el-container>
-      <el-aside :width="isCollapse ? '64px' : '200px'">
+      <el-aside :width="isCollapse ? '64px' : '300px'">
         <div class="collapse-button" @click="toggleCollapse">|||</div>
         <el-menu
             class="el-menu-vertical-demo"
@@ -24,7 +24,7 @@
               <el-icon>
                 <setting/>
               </el-icon>
-              <span>Vue3学习demo</span>
+              <span>Vue3学习</span>
             </template>
             <el-menu-item index="/home/demo1">ref()、reactive()</el-menu-item>
             <el-menu-item index="/home/demo2">ref()拓展、computed()、watch()</el-menu-item>
@@ -32,6 +32,9 @@
             <el-menu-item index="/home/hooks">Hooks</el-menu-item>
             <el-menu-item index="/home/demo4">其他CompositionApi (1)</el-menu-item>
             <el-menu-item index="/home/demo5">其他CompositionApi (2)</el-menu-item>
+            <el-menu-item index="/home/demo6">其他CompositionApi (3)</el-menu-item>
+            <el-menu-item index="/home/demo6">其他CompositionApi (3)</el-menu-item>
+
           </el-sub-menu>
           <el-menu-item index="/home/blog">
             <el-icon>
