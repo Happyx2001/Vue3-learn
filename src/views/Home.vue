@@ -34,7 +34,7 @@
             <el-menu-item index="/home/demo5">其他CompositionApi (2)</el-menu-item>
             <el-menu-item index="/home/demo6">其他CompositionApi (3)</el-menu-item>
             <el-menu-item index="/home/demo6">其他CompositionApi (3)</el-menu-item>
-
+            <el-menu-item index="/home/demo7">Vue3 的新组件</el-menu-item>
           </el-sub-menu>
           <el-menu-item index="/home/blog">
             <el-icon>
