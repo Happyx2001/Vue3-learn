@@ -65,7 +65,6 @@ export default {
       addCar,
       addCarPrice
     }
-
   }
 }
 </script>

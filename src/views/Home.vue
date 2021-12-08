@@ -22,7 +22,7 @@
           <el-sub-menu index="1">
             <template #title>
               <el-icon>
-                <setting/>
+                <star-filled/>
               </el-icon>
               <span>Vue3学习</span>
             </template>
@@ -38,7 +38,7 @@
           </el-sub-menu>
           <el-menu-item index="/home/blog">
             <el-icon>
-              <icon-menu/>
+              <collection/>
             </el-icon>
             <span>博客</span>
           </el-menu-item>
@@ -56,15 +56,14 @@
 import {useRoute, useRouter} from 'vue-router'
 import {defineComponent, ref} from "vue";
 import {
-  Location,
-  Document,
-  Menu as IconMenu,
-  Setting,
+  StarFilled,
+  Collection
 } from '@element-plus/icons'
 
 export default defineComponent({
       components: {
-        Location, Document, Setting, IconMenu,
+        StarFilled,
+        Collection
       },
       setup() {
         // ps: 这两个都需要提前声明
