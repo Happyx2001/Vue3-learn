@@ -1,12 +1,36 @@
 <template>
   <div class="blog">
     <h1>Blog</h1>
+    {{ blogData }}
   </div>
 </template>
 
 <script>
+import {getBlogData} from "../../api/blog";
+import {onMounted, reactive} from "vue";
+
 export default {
-  name: "blog"
+  name: "blog",
+  setup() {
+
+    // 储存获取到的 blog 数据
+    let blogData = reactive([])
+
+    // 调用获取接口
+    const getBlog = async () => {
+      const data = await getBlogData()
+      console.log(data, 123)
+      blogData = data.record
+    }
+
+    onMounted(() => {
+      getBlog()
+    })
+
+    return {
+      blogData
+    }
+  }
 }
 </script>
 

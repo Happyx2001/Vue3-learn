@@ -4,6 +4,8 @@
  * 2. 取消重复请求
  * 3. Loading 场景
  * 4. 判断不同的状态码
+ *
+ * PS: 好像有BUG
  */
 import axios from "axios";
 import {ElMessage, ElLoading} from "element-plus";
@@ -11,13 +13,13 @@ import {ElMessage, ElLoading} from "element-plus";
 /**
  * myAxios接收的参数
  * @param axiosConfig 请求配置
- * @param customOptions 是否开启重复请求
- * @param loadingOptions El-Loading 参数实则hi
+ * @param customOptions 自定义配置
+ * @param loadingOptions El-Loading 参数
  * @return { AxiosPromise } axios返回的是promise哦
  */
 function myAxios(axiosConfig, customOptions, loadingOptions) {
     const service = axios.create({
-        baseURL: "http://localhost:8888", // 设置统一的请求前缀
+        baseURL: "/api", // 设置统一的请求前缀
         timeout: 5000, // 设置统一超时时间
     })
 
