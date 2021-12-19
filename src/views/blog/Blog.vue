@@ -23,7 +23,9 @@ export default {
       blogData = data.record
     }
 
+    // 生命周期 mounted 中执行获取数据的函数
     onMounted(() => {
+      // 获取Blog数据
       getBlog()
     })
 
