@@ -17,7 +17,6 @@
             router
             :collapse="isCollapse"
             :collapse-transition="false"
-            collapse="true"
         >
           <el-sub-menu index="1">
             <template #title>

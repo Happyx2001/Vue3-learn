@@ -38,7 +38,7 @@ export default {
     //   return person.first + '-' + person.second
     // })
 
-    // 完整写法：考虑对计算属性的读写
+    // 完整写法：考虑对计算属性的读写 (不常用)
     person.fullName = computed({
       // 读取
       get() {

@@ -2,8 +2,8 @@
   <div class="Tele">
     <h1>Teleport</h1>
     <div>
-      Teleport 是一种能够将我们的组件HTML结构移动到指定位置的技术。 <br>
-      例如：这个 dialog 组件 (被挂载到了 body 位置之下) <br>
+      Teleport 是一种能够将我们的组件HTML结构移动到指定位置的技术。 <br />
+      例如：这个 dialog 组件 (被挂载到了 body 位置之下) <br />
       <el-button type="success" @click="isShow = true">点击—打开弹窗</el-button>
     </div>
     <!-- 使用teleport标签 to="要挂载到的位置" -->
@@ -15,7 +15,9 @@
           <h4>一些内容</h4>
           <h4>一些内容</h4>
           <h4>一些内容</h4>
-          <el-button type="danger" @click="isShow = false">点击—关闭弹窗</el-button>
+          <el-button type="danger" @click="isShow = false"
+            >点击—关闭弹窗</el-button
+          >
         </div>
       </div>
     </teleport>
@@ -23,21 +25,21 @@
 </template>
 
 <script>
-import {ref} from "vue";
+import { ref } from "vue";
 
 export default {
   name: "VueTeleport",
   setup() {
-    let isShow = ref(false)
+    let isShow = ref(false);
 
-    return {isShow}
-  }
-}
+    return { isShow };
+  },
+};
 </script>
 
 <style scoped>
 .Tele {
-  background-color: #2CD5FF;
+  background-color: #2cd5ff;
 }
 
 /*弹窗的样式*/
